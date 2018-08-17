@@ -26,7 +26,7 @@ RUN source /opt/ros/$ROS_DISTRO/setup.bash && catkin_make -C /home/software/catk
 COPY assets/launch_system_monitor.sh /root/launch_system_monitor.sh
 COPY assets/system_monitor_config.yaml /root/system_monitor_config.yaml
 COPY assets/system_monitor.launch /root/system_monitor.launch
-RUN ["chmod", "+x", "/root/launch_system_monitor.sh"]
+RUN chmod +x /root/launch_system_monitor.sh
 
 # disable ARM
 RUN [ "cross-build-end" ]
