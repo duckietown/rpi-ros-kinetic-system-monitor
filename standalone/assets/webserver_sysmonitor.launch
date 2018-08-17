@@ -1,0 +1,9 @@
+<launch>
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+        <arg name="port" value="9000"/>
+    </include>
+
+    <include file="/root/system_monitor.launch">
+      <arg name="machine_name" value="rpi" />
+    </include>
+</launch>
