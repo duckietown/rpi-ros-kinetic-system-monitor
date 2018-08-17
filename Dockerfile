@@ -5,6 +5,14 @@ FROM duckietown/rpi-ros-kinetic-base:latest
 ARG PORT=9001
 ARG ROS_MASTER_URI=http://localhost:11311/
 
+# parameters
+ENV CPU_MONITOR true
+ENV HDD_MONITOR false
+ENV MEM_MONITOR true
+ENV NTP_MONITOR false
+ENV NET_MONITOR false
+ENV CONFIG default
+
 # enable ARM
 RUN [ "cross-build-start" ]
 
@@ -23,9 +31,7 @@ RUN git clone https://github.com/afdaniele/ros-system-monitor /home/software/cat
 RUN source /opt/ros/$ROS_DISTRO/setup.bash && catkin_make -C /home/software/catkin_ws
 
 # copy configure and launch script
-COPY assets/launch_system_monitor.sh /root/launch_system_monitor.sh
-COPY assets/system_monitor_config.yaml /root/system_monitor_config.yaml
-COPY assets/system_monitor.launch /root/system_monitor.launch
+COPY assets/* /root/
 RUN chmod +x /root/launch_system_monitor.sh
 
 # disable ARM
