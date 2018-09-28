@@ -1,5 +1,6 @@
 # Base image
 FROM duckietown/rpi-ros-kinetic-base:master18
+ENV DEBIAN_FRONTEND=noninteractive
 
 # arguments
 ARG PORT=9001
