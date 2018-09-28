@@ -1,5 +1,5 @@
 # Base image
-FROM duckietown/rpi-ros-kinetic-base:latest
+FROM duckietown/rpi-ros-kinetic-base:master18
 
 # arguments
 ARG PORT=9001
