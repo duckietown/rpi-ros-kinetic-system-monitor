@@ -1,6 +1,8 @@
 # Base image
 FROM duckietown/rpi-ros-kinetic-base:master18
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # parameters
 ENV CPU_MONITOR true
 ENV HDD_MONITOR false
